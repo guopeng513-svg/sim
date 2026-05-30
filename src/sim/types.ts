@@ -1,4 +1,4 @@
-export type NumericId = "deepseek-v4-pro" | "dense-70b";
+export type NumericId = "deepseek-v3" | "deepseek-v4-pro" | "dense-70b";
 
 export interface ModelSpec {
   id: NumericId | string;

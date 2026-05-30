@@ -4,6 +4,7 @@
 
 ## 功能
 
+- DeepSeek-V3 MoE 模板：约 671B total params、37B active params、256 routed experts、top-k 8，默认按 4K 训练 context 估算。
 - DeepSeek-V4-Pro 类 MoE 模板：约 1.6T total params、49B active params、1M context，所有未公开字段都可编辑。
 - Dense 70B 基线模板，用于对照 active compute 和 total memory pressure。
 - H100 512-GPU 与 Ascend 类集群模板，支持自定义 FLOPS、显存和通信带宽。

@@ -2,6 +2,24 @@ import type { ClusterSpec, ModelSpec, ParallelConfig } from "./types";
 
 export const modelTemplates: ModelSpec[] = [
   {
+    id: "deepseek-v3",
+    name: "DeepSeek-V3 MoE 训练模板",
+    totalParamsB: 671,
+    activeParamsB: 37,
+    layers: 61,
+    hiddenSize: 7168,
+    attentionHeads: 128,
+    sequenceLength: 4096,
+    vocabSize: 129_280,
+    expertCount: 256,
+    routedExperts: 256,
+    sharedExperts: 1,
+    topK: 8,
+    moeLayerFrequency: 58 / 61,
+    capacityFactor: 1.25,
+    tokenImbalanceFactor: 1.08,
+  },
+  {
     id: "deepseek-v4-pro",
     name: "DeepSeek-V4-Pro 类 MoE 模板",
     totalParamsB: 1600,
