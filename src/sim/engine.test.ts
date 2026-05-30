@@ -50,10 +50,19 @@ describe("MoE training simulator", () => {
     const result = simulate(modelTemplates[2], clusterTemplates[0], {
       ...defaultParallelConfig,
       ep: 1,
-      dp: 32,
+      dp: 64,
     });
     expect(result.valid).toBe(true);
     expect(result.time.epDispatchMs).toBe(0);
     expect(result.tokensPerSecond).toBeGreaterThan(0);
+  });
+
+  it("keeps all cluster templates at 1024 accelerators", () => {
+    for (const cluster of clusterTemplates) {
+      expect(cluster.nodes * cluster.gpusPerNode).toBe(1024);
+      const result = simulate(modelTemplates[0], cluster, defaultParallelConfig, false);
+      expect(result.valid).toBe(true);
+      expect(result.tokensPerSecond).toBeGreaterThan(0);
+    }
   });
 });
